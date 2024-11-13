@@ -12,6 +12,7 @@
   # Sets environment variables in the workspace
   env = {
     PATH = ["/home/user/.pub-cache/bin" "./flutter/bin"];
+    FLUTTER_GIT_URL = "https://github.com/loic-sharma/flutter";
   };
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
@@ -22,7 +23,7 @@
     workspace = {
       # Runs when a workspace is first created with this `dev.nix` file
       onCreate = {
-        installDependencies = "flutter pub get";
+        installDependencies = "./flutter/bin/flutter pub get";
         build-flutter = ''
           cd /home/user/myapp/android
 
@@ -55,11 +56,11 @@
       enable = true;
       previews = {
         web = {
-          command = ["flutter" "run" "--machine" "-d" "web-server" "--web-hostname" "0.0.0.0" "--web-port" "$PORT"];
+          command = ["./flutter/bin/flutter" "run" "--machine" "-d" "web-server" "--web-hostname" "0.0.0.0" "--web-port" "$PORT"];
           manager = "flutter";
         };
         android = {
-          command = ["flutter" "run" "--machine" "-d" "android" "-d" "localhost:5555"];
+          command = ["./flutter/bin/flutter" "run" "--machine" "-d" "android" "-d" "localhost:5555"];
           manager = "flutter";
         };
       };
