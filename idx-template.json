@@ -1,0 +1,10 @@
+{
+  "name": "Decorator Study",
+  "description": "Flutter Decorator Study",
+  "categories": ["Mobile"],
+  "icon": "https://www.gstatic.com/images/branding/productlogos/flutter/v6/192px.svg",
+  "publisher": "Loïc Sharma",
+  "host": {
+    "virtualization": "true"
+  }
+}
